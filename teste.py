@@ -12,7 +12,8 @@ def loss_plot(history):
     train_acc = history.history['val_loss']
     val_acc = history.history['val_accuracy']
 
-    plt.plot(np.arange(1,21), train_acc, marker = 'D', label = 'Loss Accuracy')
+    plt.figure(figsize = (9,5))
+    plt.plot(np.arange(1,31), train_acc, marker = 'D', label = 'Loss Accuracy')
     plt.xlabel('epocas')
     plt.ylabel('acuracia')
     plt.plot('Train/Validation')
@@ -21,7 +22,7 @@ def loss_plot(history):
     plt.show()
 
 
-epochs = 20
+epochs = 30
 batch_size = 128
 optimizer = Adam(lr=0.0001)
 input_shape = (28,28,1)
